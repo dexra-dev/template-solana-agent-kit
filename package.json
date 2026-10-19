@@ -1,0 +1,34 @@
+{
+  "name": "template-solana-agent-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "4.0.82",
+    "@ai-sdk/mcp": "2.0.78",
+    "@ai-sdk/openai": "4.0.96",
+    "@dexra-dev/client": "0.1.1",
+    "@dexra-dev/plugin-solana-agent-kit": "0.1.0",
+    "@solana/kit": "8.5.0",
+    "@solana/web3.js": "1.99.0",
+    "ai": "7.0.143",
+    "solana-agent-kit": "2.0.10",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  },
+  "description": "Solana Agent Kit agent that checks every buy with Dexra before it trades through Jupiter; dry run by default",
+  "scripts": {
+    "chat": "node --env-file-if-exists=.env --import tsx src/chat.ts",
+    "dry-run": "node --env-file-if-exists=.env --import tsx scripts/dry-run.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --import tsx --test test/*.test.ts"
+  }
+}
